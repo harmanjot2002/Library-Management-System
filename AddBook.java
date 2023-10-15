@@ -9,8 +9,10 @@ public class AddBook {
     private static JTextField[] textFields;
     public AddBook() {
         JFrame f = new JFrame("Add Book");
-        f.setSize(800, 550);
+        f.setSize(600, 500);
         f.setLayout(null);
+        f.setUndecorated(true);
+        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
 
         f.setContentPane(new JPanel(null));
 
@@ -20,34 +22,41 @@ public class AddBook {
         JPanel panel=new JPanel();
         panel.setBounds(0, -25,800,550) ;
         f.add(panel);
-        ImageIcon img = new ImageIcon("./imagee.jpeg");
+        ImageIcon img = new ImageIcon("./BackgroungImg.png");
         JLabel bck = new JLabel();
         bck.setIcon(img);
         bck.setBounds(0, -25, 800, 550);
         bck.setLayout(null);
         panel.add(bck);
-
+        
         String[] labelNames = {"BName", "Bid", "Price", "Author"};
         labels = new JLabel[labelNames.length];
         for (int i = 0; i < labels.length; i++) {
             labels[i] = new JLabel(labelNames[i]+": ");
-            labels[i].setBounds(500, 130 + i * 50, 200, 40);
-            labels[i].setFont(new Font("Monotype Corsiva", Font.BOLD, 30));
-            labels[i].setForeground(Color.blue);
+            labels[i].setBounds(200, 130 + i * 50, 200, 40);
+            labels[i].setFont(new Font("Serif", Font.BOLD, 30));
+            labels[i].setForeground(new Color(128, 0, 128));
             bck.add(labels[i]);
         }
         textFields = new JTextField[labelNames.length];
         for (int i = 0; i < textFields.length; i++) {
             textFields[i] = new JTextField();
-            textFields[i].setBounds(650, 130 + i * 50, 193, 40);
-            textFields[i].setFont(new Font("Monotype Corsiva", Font.BOLD, 20));
+            textFields[i].setBounds(350, 130 + i * 50, 193, 40);
+            textFields[i].setFont(new Font("Serif", Font.BOLD, 20));
             bck.add(textFields[i]);
         }
 
         JButton btn=new JButton("Add Book");
-        btn.setBounds(600,370,120,50);
-        btn.setFont(new Font("Monotype Corsiva", Font.BOLD, 15));
+        btn.setBounds(230,370,120,50);
+        btn.setFont(new Font("Serif", Font.BOLD, 15));
+        btn.setBackground(new Color(63, 137, 255));
         bck.add(btn);
+
+          JButton back=new JButton("Back");
+        back.setBounds(430,370,120,50);
+        back.setFont(new Font("Serif", Font.BOLD, 15));
+        bck.add(back);
+        back.setBackground(new Color(226, 18, 93));
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,8 +66,17 @@ public class AddBook {
                     String input4=textFields[3].getText().trim();
 
                 if (input.isEmpty() || input2.isEmpty() || input3.isEmpty() || input4.isEmpty()) {
-                    JOptionPane.showMessageDialog(f, "Text field is required!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
+                    JOptionPane.showMessageDialog(null, "Text field is required!");
+                }else if (!input3.matches("\\d+")){
+                        JOptionPane.showMessageDialog(null, "Price must be in digits only.");
+                    }
+                    else if (!input4.matches("^[A-Za-z\\s]+$")) {
+                        JOptionPane.showMessageDialog(null, "Author should contain only letters.");
+                    }
+                   else if (!input.matches("^[A-Za-z\\s]+$")) {
+                        JOptionPane.showMessageDialog(null, "Book Name should contain only letters.");
+                    } else {
+                        f.dispose();
                    new RecAdded();
                 }
     }
@@ -66,6 +84,13 @@ public class AddBook {
             
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              f.dispose();
+             new BookStore();
+            }
+            });
     }
     
 

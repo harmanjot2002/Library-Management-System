@@ -78,21 +78,21 @@ class Login implements ActionListener {
 
         loginButton = new JButton("Login");
         loginButton.setBounds(130, 300, 80, 25);
-        loginButton.setForeground(Color.WHITE);
+        loginButton.setForeground(Color.BLACK);
         loginButton.setBackground(Color.BLACK);
         loginButton.addActionListener(this);
         frame.add(loginButton);
 
         exitButton = new JButton("Exit");
         exitButton.setBounds(230, 300, 80, 25);
-        exitButton.setForeground(Color.WHITE);
+        exitButton.setForeground(Color.BLACK);
         exitButton.setBackground(Color.RED);
         exitButton.addActionListener(e -> System.exit(0));
         frame.add(exitButton);
 
         registerButton = new JButton("Register");
         registerButton.setBounds(180, 340, 100, 25);
-        registerButton.setForeground(Color.WHITE);
+        registerButton.setForeground(Color.BLACK);
         registerButton.setBackground(new Color(0, 128, 0)); // Dark green
         registerButton.addActionListener(this);
         frame.add(registerButton);

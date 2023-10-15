@@ -72,7 +72,7 @@ public class Register implements ActionListener {
         // Register button
         registerButton = new JButton("Register");
         registerButton.setBounds(130, 330, 100, 25);
-        registerButton.setForeground(Color.WHITE);
+        registerButton.setForeground(Color.BLACK);
         registerButton.setBackground(new Color(0, 128, 0)); // Dark green
         registerButton.addActionListener(this);
         frame.add(registerButton);
@@ -80,7 +80,7 @@ public class Register implements ActionListener {
         // Exit button
         exitButton = new JButton("Exit");
         exitButton.setBounds(240, 330, 80, 25);
-        exitButton.setForeground(Color.WHITE);
+        exitButton.setForeground(Color.BLACK);
         exitButton.setBackground(Color.RED);
         exitButton.addActionListener(e -> System.exit(0));
         frame.add(exitButton);
