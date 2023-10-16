@@ -40,7 +40,7 @@ public class AddBook {
             labels[i] = new JLabel(labelNames[i]+": ");
             labels[i].setBounds(200, 130 + i * 50, 200, 40);
             labels[i].setFont(new Font("Serif", Font.BOLD, 30));
-            labels[i].setForeground(new Color(153, 0, 76));
+            labels[i].setForeground(new Color(102, 0, 51));
             bck.add(labels[i]);
         }
         textFields = new JTextField[labelNames.length];
@@ -57,8 +57,7 @@ public class AddBook {
         btn.setBackground(new Color(63, 137, 255));
         bck.add(btn);
 
-
-        JButton back=new JButton("Back");
+          JButton back=new JButton("Back");
         back.setBounds(430,350,120,50);
         back.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(back);
@@ -68,14 +67,14 @@ public class AddBook {
         exit.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(exit);
         exit.addActionListener(e -> System.exit(0));
-        exit.setBackground(new Color(226, 18, 93));
+        exit.setBackground(Color.RED);
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String input = textFields[0].getText().trim();
                 String input2=textFields[1].getText().trim();
-                String input3=textFields[2].getText().trim();
-                String input4=textFields[3].getText().trim();
+                  String input3=textFields[2].getText().trim();
+                    String input4=textFields[3].getText().trim();
 
                 if (input.isEmpty() || input2.isEmpty() || input3.isEmpty() || input4.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Text field is required!");

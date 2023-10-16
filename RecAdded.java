@@ -7,12 +7,12 @@ import java.awt.print.Book;
 public class RecAdded {
     public RecAdded() {
         JFrame f = new JFrame("Record Added");
-        f.setSize(350, 200);
+        f.setSize(350, 180);
         f.setLayout(null);
 
         f.setContentPane(new JPanel(null));
         f.setUndecorated(true);
-        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         f.setLocation((int) (screenSize.getWidth() - f.getWidth()) / 2, (int) (screenSize.getHeight() - f.getHeight()) / 2);
@@ -29,18 +29,20 @@ public class RecAdded {
         
         JLabel label=new JLabel("Record Added");
         label.setBounds(230,50,200,40);
-        label.setFont(new Font("Serif", Font.BOLD, 30));
-        label.setForeground(new Color(0, 79, 0));
+        label.setFont(new Font("Serif", Font.BOLD, 32));
+        label.setForeground(new Color(102, 0, 51));
         bck.add(label);
 
         JButton add=new JButton("Book Store");
-     add.setBackground(new Color(226, 142, 93));
-    add.setBounds(200,120,130,40);
-      bck.add(add);
-        JButton exit =new JButton("Exit");
+        add.setForeground(Color.white);
+        add.setBackground(new Color(255, 128, 0));
+        add.setBounds(200,120,110,35);
+        bck.add(add);
 
-        exit.setBackground(new Color(226, 18, 93));
-       exit.setBounds(350,120,110,40);
+        JButton exit =new JButton("Exit"); 
+        exit.setForeground(Color.white); 
+        exit.setBackground(Color.red);
+        exit.setBounds(350,120,110,35);
          bck.add(exit);
 
          exit.addActionListener(e -> System.exit(0));
