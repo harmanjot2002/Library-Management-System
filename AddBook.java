@@ -52,16 +52,22 @@ public class AddBook {
         }
 
         JButton btn=new JButton("Add Book");
-        btn.setBounds(230,370,120,50);
+        btn.setBounds(230,350,120,50);
         btn.setFont(new Font("Serif", Font.BOLD, 15));
         btn.setBackground(new Color(63, 137, 255));
         bck.add(btn);
 
           JButton back=new JButton("Back");
-        back.setBounds(430,370,120,50);
+        back.setBounds(430,350,120,50);
         back.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(back);
         back.setBackground(new Color(226, 18, 93));
+          JButton exit=new JButton("Exit");
+        exit.setBounds(330,430,120,50);
+        exit.setFont(new Font("Serif", Font.BOLD, 15));
+        bck.add(exit);
+        exit.addActionListener(e -> System.exit(0));
+        exit.setBackground(new Color(226, 18, 93));
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
