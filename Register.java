@@ -29,13 +29,13 @@ public class Register implements ActionListener {
                 (Toolkit.getDefaultToolkit().getScreenSize().height - frame.getHeight()) / 2
         );
         frame.setUndecorated(true);
-        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         // Registration heading
         headingLabel = new JLabel("Registration");
         headingLabel.setBounds(60, 20, 380, 65);
         headingLabel.setFont(new Font("Serif", Font.BOLD, 55));
-        headingLabel.setForeground(new Color(128, 0, 128)); // Purple color
+        headingLabel.setForeground(new Color(102, 0, 51));
         frame.add(headingLabel);
 
         // Labels for registration fields

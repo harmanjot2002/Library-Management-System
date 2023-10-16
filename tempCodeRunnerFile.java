@@ -1,1 +1,1 @@
-frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+new Color(102, 0, 51)

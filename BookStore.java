@@ -10,46 +10,53 @@ public class BookStore implements ActionListener {
     private static ImageIcon imageIcon;
     private static JLabel imageLabel;
    public BookStore(){
-         f= new JFrame("Book Store");
+        f= new JFrame("Book Store");
         f.setSize(600, 500);
         f.setLayout(null);
         Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
         f.setLocation((int)(screenSize.getWidth()-f.getWidth())/2,(int)(screenSize.getHeight()-f.getHeight())/2);
         f.setUndecorated(true);
-        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
         
         JLabel heading=new JLabel("Book Store");
         heading.setBounds(170,50,400,50);
         heading.setFont(new Font("Serif", Font.BOLD, 55));
-        heading.setForeground(new Color(128, 0, 128)); 
+        heading.setForeground(new Color(102, 0, 51)); 
         f.add(heading);
+
         JButton addbtn=new JButton("Add");
-       // addbtn.setBackground(Color.green);
-        addbtn.setBackground(new Color(63, 152, 76));
+        addbtn.setForeground(Color.white);
+       addbtn.setBackground(Color.BLUE);
+        // addbtn.setBackground(new Color(63, 152, 76));
         addbtn.setBounds(150,150,110,50);
         f.add(addbtn);
         addbtn.addActionListener(this);
 
         JButton deletebtn=new JButton("Delete");
        // deletebtn.setBackground(Color.red);
-        deletebtn.setBackground(new Color(63, 137, 255));
-          deletebtn.setBounds(340,150,110,50);
+       deletebtn.setForeground(Color.white);
+        deletebtn.setBackground(new Color(153, 0, 76));
+        deletebtn.setBounds(340,150,110,50);
         f.add(deletebtn);
 
         JButton updatebtn=new JButton("Update");
-       // updatebtn.setBackground(Color.blue);
-        updatebtn.setBackground(new Color(206, 49, 39));
+        updatebtn.setForeground(Color.white);
+       updatebtn.setBackground(new Color(0, 128, 0));
+        // updatebtn.setBackground(new Color(206, 49, 39));
          updatebtn.setBounds(150,280,110,50);
         f.add(updatebtn);
+
         JButton exit =new JButton("Exit");
-         //exit.setBackground(Color.blue);
-         exit.setBackground(new Color(226, 18, 93));
+        exit.setForeground(Color.white);
+         exit.setBackground(Color.RED);
+        //  exit.setBackground(new Color(226, 18, 93));
         exit.setBounds(340,280,110,50);
           f.add(exit);
 
             JButton login=new JButton("Back to Login");
          //exit.setBackground(Color.blue);
-         login.setBackground(new Color(226, 142, 93));
+         login.setForeground(Color.white);
+         login.setBackground(new Color(255, 128, 0));
         login.setBounds(240,380,130,60);
           f.add(login);
           exit.addActionListener(e -> System.exit(0));

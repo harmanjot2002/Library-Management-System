@@ -52,12 +52,12 @@ class Login implements ActionListener {
             (Toolkit.getDefaultToolkit().getScreenSize().height - frame.getHeight()) / 2
         );
         frame.setUndecorated(true);
-        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         JLabel headingLabel = new JLabel("Login Account");
         headingLabel.setBounds(60, 20, 380, 65);
         headingLabel.setFont(new Font("Serif", Font.BOLD, 55));
-        headingLabel.setForeground(new Color(128, 0, 128)); // Purple color
+        headingLabel.setForeground(new Color(102, 0, 51));
         frame.add(headingLabel);
 
         label = new JLabel("Username");
@@ -78,8 +78,8 @@ class Login implements ActionListener {
 
         loginButton = new JButton("Login");
         loginButton.setBounds(130, 300, 80, 25);
-        loginButton.setForeground(Color.BLACK);
-        loginButton.setBackground(Color.BLACK);
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setBackground(new Color(153, 0, 76));
         loginButton.addActionListener(this);
         frame.add(loginButton);
 

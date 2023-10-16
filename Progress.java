@@ -13,7 +13,7 @@ class Progress {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(350, 200);
         frame.setUndecorated(true);
-        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         // Create a JLabel with the background image
         JLabel background = new JLabel(new ImageIcon("loginBGI.jpg")); // Replace "background.jpg" with your image file
@@ -23,7 +23,7 @@ class Progress {
         JLabel headingLabel = new JLabel("HD1.0");
         headingLabel.setBounds(100, 28, 380, 60);
         headingLabel.setFont(new Font("Serif", Font.BOLD, 55));
-        headingLabel.setForeground(new Color(128, 0, 128));
+        headingLabel.setForeground(new Color(102, 0, 51));
         background.add(headingLabel); // Add to the background JLabel
 
         progressBar = new JProgressBar(0, 100);

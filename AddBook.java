@@ -12,7 +12,7 @@ public class AddBook {
         f.setSize(600, 500);
         f.setLayout(null);
         f.setUndecorated(true);
-        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(128, 0, 128), 3));
+        f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         f.setContentPane(new JPanel(null));
 
