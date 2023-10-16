@@ -35,14 +35,14 @@ public class AddBook {
             labels[i] = new JLabel(labelNames[i]+": ");
             labels[i].setBounds(200, 130 + i * 50, 200, 40);
             labels[i].setFont(new Font("Serif", Font.BOLD, 30));
-            labels[i].setForeground(new Color(128, 0, 128));
+            labels[i].setForeground(new Color(153, 0, 76));
             bck.add(labels[i]);
         }
         textFields = new JTextField[labelNames.length];
         for (int i = 0; i < textFields.length; i++) {
             textFields[i] = new JTextField();
-            textFields[i].setBounds(350, 130 + i * 50, 193, 40);
-            textFields[i].setFont(new Font("Serif", Font.BOLD, 20));
+            textFields[i].setBounds(350, 140 + i * 50, 193, 30);
+            textFields[i].setFont(new Font("Serif", Font.BOLD, 15));
             bck.add(textFields[i]);
         }
 
