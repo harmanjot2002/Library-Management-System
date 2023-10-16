@@ -52,7 +52,7 @@ public class AddBook {
         btn.setBackground(new Color(63, 137, 255));
         bck.add(btn);
 
-          JButton back=new JButton("Back");
+        JButton back=new JButton("Back");
         back.setBounds(430,370,120,50);
         back.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(back);
@@ -62,8 +62,8 @@ public class AddBook {
             public void actionPerformed(ActionEvent e) {
                 String input = textFields[0].getText().trim();
                 String input2=textFields[1].getText().trim();
-                  String input3=textFields[2].getText().trim();
-                    String input4=textFields[3].getText().trim();
+                String input3=textFields[2].getText().trim();
+                String input4=textFields[3].getText().trim();
 
                 if (input.isEmpty() || input2.isEmpty() || input3.isEmpty() || input4.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Text field is required!");
