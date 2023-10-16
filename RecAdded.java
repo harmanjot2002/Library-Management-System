@@ -31,6 +31,7 @@ public class RecAdded {
         label.setBounds(230,50,200,40);
         label.setFont(new Font("Serif", Font.BOLD, 32));
         label.setForeground(new Color(102, 0, 51));
+        // label.setForeground(new Color(28, 65, 7)); //green
         bck.add(label);
 
         JButton add=new JButton("Book Store");
