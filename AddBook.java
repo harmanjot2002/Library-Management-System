@@ -28,7 +28,12 @@ public class AddBook {
         bck.setBounds(0, -25, 800, 550);
         bck.setLayout(null);
         panel.add(bck);
-        
+        JLabel heading=new JLabel("Add Book");
+        heading.setBounds(260, 50, 250, 50);
+        heading.setFont(new Font("Serif", Font.BOLD, 55));
+        heading.setForeground(new Color(102, 0, 51)); 
+        bck.add(heading);
+
         String[] labelNames = {"BName", "Bid", "Price", "Author"};
         labels = new JLabel[labelNames.length];
         for (int i = 0; i < labels.length; i++) {
