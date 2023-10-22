@@ -61,7 +61,7 @@ public class DelBook {
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         Connection con = DriverManager.getConnection(url, user, pwd);
                         PreparedStatement ps = con.prepareStatement(query);
-                        int rows = ps.executeUpdate(query);
+                        int rows = ps.executeUpdate(query);//Used with delete(means update like queries nd return no. of rows that are changed by our query.)
                         if (rows > 0) {
                             JOptionPane.showMessageDialog(null, "Book removed from Library");
                         } else {
