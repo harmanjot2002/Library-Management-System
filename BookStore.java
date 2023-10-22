@@ -52,6 +52,14 @@ public class BookStore implements ActionListener {
         updatebtn.setBounds(150, 280, 110, 50);
         f.add(updatebtn);
 
+        updatebtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+                new UpdateBook();
+            }
+        });
+
         JButton displaybtn = new JButton("Display");
         displaybtn.setBackground(new Color(153, 0, 153));
         displaybtn.setForeground(Color.white);
@@ -85,7 +93,7 @@ public class BookStore implements ActionListener {
         f.add(panel2);
 
         try {
-            BufferedImage originalImage = ImageIO.read(getClass().getResource("./BackgroungImg.png"));
+            BufferedImage originalImage = ImageIO.read(getClass().getResource("./loginBg.jpg"));
             int scaledWidth = 800;
             int scaledHeight = 600;
             BufferedImage scaledImage = new BufferedImage(scaledWidth, scaledHeight, BufferedImage.TYPE_INT_RGB);

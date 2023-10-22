@@ -96,7 +96,8 @@ public class Display {
         updateButton.setBackground(new Color(24, 111, 101));
         updateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-              
+              f.dispose();
+              new UpdateBook();
             }
         });
 
