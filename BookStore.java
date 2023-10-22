@@ -39,6 +39,13 @@ public class BookStore implements ActionListener {
         deletebtn.setBounds(340, 180, 110, 50);
         f.add(deletebtn);
 
+        deletebtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+                new DelBook();
+            }
+        });
+
         JButton updatebtn = new JButton("Update");
         updatebtn.setForeground(Color.white);
         updatebtn.setBackground(new Color(24, 111, 101));

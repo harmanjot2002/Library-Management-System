@@ -86,7 +86,8 @@ public class Display {
         deleteButton.setBackground(new Color(201,69,47));
         deleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               
+                f.dispose();
+                new DelBook();
             }
         });
 
