@@ -108,6 +108,7 @@ public class AddBook {
                         Connection connection = DriverManager.getConnection(url, user, password);
 
                         String query = "INSERT INTO books (Bid, Bname, Price, Author) VALUES (?, ?, ?, ?)";
+                        //We cannot hardcode the values,so use ? here.
                         PreparedStatement preparedStatement = connection.prepareStatement(query);
                         preparedStatement.setString(1, bookId);
                         preparedStatement.setString(2, bookName);
@@ -116,7 +117,8 @@ public class AddBook {
 
                         int rowsInserted = preparedStatement.executeUpdate();
                         if (rowsInserted > 0) {
-                            JOptionPane.showMessageDialog(null, "Book added successfully.");
+                            f.dispose();
+                            new RecAdded();
                         } else {
                             JOptionPane.showMessageDialog(null, "Failed to add the book.");
                         }
