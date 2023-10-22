@@ -16,7 +16,7 @@ class Progress {
         frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
         // Create a JLabel with the background image
-        JLabel background = new JLabel(new ImageIcon("loginBGI.jpg")); // Replace "background.jpg" with your image file
+        JLabel background = new JLabel(new ImageIcon("loginBg.jpg")); // Replace "background.jpg" with your image file
         background.setBounds(0, 0, frame.getWidth(), frame.getHeight());
         frame.add(background);
 

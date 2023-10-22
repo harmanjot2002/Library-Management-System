@@ -43,7 +43,7 @@ class Login implements ActionListener {
         frame.setLocationRelativeTo(null);
 
         // Create a background panel with the path to your background image
-        BackgroundPanel backgroundPanel = new BackgroundPanel("loginBGI.jpg");
+        BackgroundPanel backgroundPanel = new BackgroundPanel("loginBg.jpg");
         backgroundPanel.setLayout(null);
 
         frame.setContentPane(backgroundPanel);
