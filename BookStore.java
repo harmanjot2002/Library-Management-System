@@ -28,39 +28,39 @@ public class BookStore implements ActionListener {
 
         JButton addbtn = new JButton("Add");
         addbtn.setForeground(Color.white);
-        addbtn.setBackground(Color.BLUE);
+        addbtn.setBackground(new Color(63, 137, 255));
         addbtn.setBounds(150, 180, 110, 50);
         f.add(addbtn);
         addbtn.addActionListener(this);
 
         JButton deletebtn = new JButton("Delete");
         deletebtn.setForeground(Color.white);
-        deletebtn.setBackground(new Color(153, 0, 76));
+        deletebtn.setBackground(new Color(201,69,47));
         deletebtn.setBounds(340, 180, 110, 50);
         f.add(deletebtn);
 
         JButton updatebtn = new JButton("Update");
         updatebtn.setForeground(Color.white);
-        updatebtn.setBackground(new Color(0, 128, 0));
+        updatebtn.setBackground(new Color(24, 111, 101));
         updatebtn.setBounds(150, 280, 110, 50);
         f.add(updatebtn);
 
         JButton displaybtn = new JButton("Display");
-        displaybtn.setBackground(Color.pink);
+        displaybtn.setBackground(new Color(153, 0, 153));
         displaybtn.setForeground(Color.white);
         displaybtn.setBounds(340, 280, 110, 50);
         f.add(displaybtn);
 
         JButton exit = new JButton("Exit");
         exit.setForeground(Color.white);
-        exit.setBackground(Color.RED);
+        exit.setBackground(new Color(64,64,64));
         exit.setBounds(150, 380, 110, 50);
         f.add(exit);
 
-        JButton login = new JButton("Back to Login");
+        JButton login = new JButton("Logout");
         login.setForeground(Color.white);
-        login.setBackground(new Color(255, 128, 0));
-        login.setBounds(340, 380, 130, 50);
+        login.setBackground(new Color(255,178,102));
+        login.setBounds(340, 380, 110, 50);
         f.add(login);
         exit.addActionListener(e -> System.exit(0));
 

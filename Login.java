@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.*;
 import javax.imageio.ImageIO;
 
@@ -82,21 +80,21 @@ class Login implements ActionListener {
         loginButton = new JButton("Login");
         loginButton.setBounds(130, 300, 80, 25);
         loginButton.setForeground(Color.WHITE);
-        loginButton.setBackground(new Color(153, 0, 76));
+        loginButton.setBackground(new Color(255,178,102));
         loginButton.addActionListener(this);
         frame.add(loginButton);
 
         exitButton = new JButton("Exit");
         exitButton.setBounds(230, 300, 80, 25);
-        exitButton.setForeground(Color.BLACK);
-        exitButton.setBackground(Color.RED);
+        exitButton.setForeground(Color.WHITE);
+        exitButton.setBackground(new Color(64,64,64));
         exitButton.addActionListener(e -> System.exit(0));
         frame.add(exitButton);
 
         registerButton = new JButton("Register");
         registerButton.setBounds(180, 340, 100, 25);
-        registerButton.setForeground(Color.BLACK);
-        registerButton.setBackground(new Color(0, 128, 0)); // Dark green
+        registerButton.setForeground(Color.WHITE);
+        registerButton.setBackground(new Color(0, 153, 153)); 
         registerButton.addActionListener(this);
         frame.add(registerButton);
 

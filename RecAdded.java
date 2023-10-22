@@ -30,19 +30,19 @@ public class RecAdded {
         JLabel label=new JLabel("Record Added");
         label.setBounds(230,50,200,40);
         label.setFont(new Font("Serif", Font.BOLD, 32));
-        // label.setForeground(new Color(102, 0, 51));
-        label.setForeground(new Color(28, 65, 7)); //green
+        label.setForeground(new Color(102, 0, 51));
+        // label.setForeground(new Color(28, 65, 7)); //green
         bck.add(label);
 
         JButton add=new JButton("Book Store");
         add.setForeground(Color.white);
-        add.setBackground(new Color(255, 128, 0));
+        add.setBackground(new Color(204, 102, 0));
         add.setBounds(200,120,110,35);
         bck.add(add);
 
         JButton exit =new JButton("Exit"); 
         exit.setForeground(Color.white); 
-        exit.setBackground(Color.red);
+        exit.setBackground(new Color(64,64,64));
         exit.setBounds(350,120,110,35);
          bck.add(exit);
 

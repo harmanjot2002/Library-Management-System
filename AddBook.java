@@ -65,12 +65,12 @@ public class AddBook {
         back.setBounds(230, 430, 120, 50);
         back.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(back);
-        back.setBackground(new Color(226, 18, 93));
+        back.setBackground(new Color(201,69,47));
         back.setForeground(Color.white);
 
         JButton displaybtn = new JButton("Display");
         displaybtn.setFont(new Font("Serif", Font.BOLD, 15));
-        displaybtn.setBackground(Color.pink);
+        displaybtn.setBackground(new Color(153, 0, 153));
         displaybtn.setForeground(Color.white);
         displaybtn.setBounds(430, 350, 120, 50);
         bck.add(displaybtn);
@@ -81,7 +81,7 @@ public class AddBook {
         exit.setFont(new Font("Serif", Font.BOLD, 15));
         bck.add(exit);
         exit.addActionListener(e -> System.exit(0));
-        exit.setBackground(Color.RED);
+        exit.setBackground(new Color(64,64,64));
         exit.setForeground(Color.white);
 
         btn.addActionListener(new ActionListener() {
@@ -138,7 +138,7 @@ public class AddBook {
             }
         });
 
-        
+
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         back.addActionListener(new ActionListener() {

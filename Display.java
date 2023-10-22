@@ -55,7 +55,7 @@ public class Display {
 
         TableColumnModel columnModel = j.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(50);
-        columnModel.getColumn(1).setPreferredWidth(1); 
+        columnModel.getColumn(1).setPreferredWidth(1);
         columnModel.getColumn(2).setPreferredWidth(1);
         columnModel.getColumn(3).setPreferredWidth(140);
 
@@ -69,17 +69,59 @@ public class Display {
         JScrollPane sp = new JScrollPane(j);
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setBackground(new Color(102, 0, 51));
+        // bottomPanel.setBackground(new Color(102, 0, 51));
+
+        JButton addButton = new JButton("Add");
+        addButton.setForeground(Color.WHITE);
+        addButton.setBackground(new Color(63, 137, 255));
+        addButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+                new AddBook();
+            }
+        });
+
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.setForeground(Color.WHITE);
+        deleteButton.setBackground(new Color(201,69,47));
+        deleteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               
+            }
+        });
+
+        JButton updateButton = new JButton("Update");
+        updateButton.setForeground(Color.WHITE);
+        updateButton.setBackground(new Color(24, 111, 101));
+        updateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              
+            }
+        });
+
+        JButton logoutButton = new JButton("Logout");
+        logoutButton.setForeground(Color.WHITE);
+        logoutButton.setBackground(new Color(255,178,102));
+        logoutButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+                new Login(); 
+            }
+        });
 
         JButton exitButton = new JButton("Exit");
         exitButton.setForeground(Color.WHITE);
-        exitButton.setBackground(Color.RED);
+        exitButton.setBackground(new Color(64,64,64));
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
 
+        bottomPanel.add(addButton);
+        bottomPanel.add(deleteButton);
+        bottomPanel.add(updateButton);
+        bottomPanel.add(logoutButton);
         bottomPanel.add(exitButton);
 
         f.add(heading, BorderLayout.NORTH);

@@ -31,14 +31,13 @@ public class Register implements ActionListener {
         frame.setUndecorated(true);
         frame.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
-        // Registration heading
+       
         headingLabel = new JLabel("Registration");
         headingLabel.setBounds(60, 20, 380, 65);
         headingLabel.setFont(new Font("Serif", Font.BOLD, 55));
         headingLabel.setForeground(new Color(102, 0, 51));
         frame.add(headingLabel);
 
-        // Labels for registration fields
         String[] labelNames = {"Full Name", "Username", "Date of Birth", "Email Id"};
         labels = new JLabel[labelNames.length];
         for (int i = 0; i < labels.length; i++) {
@@ -47,7 +46,7 @@ public class Register implements ActionListener {
             frame.add(labels[i]);
         }
 
-        // Text fields for registration fields 100 135 170 205 240
+      
         textFields = new JTextField[labelNames.length];
         for (int i = 0; i < textFields.length; i++) {
             textFields[i] = new JTextField();
@@ -69,23 +68,23 @@ public class Register implements ActionListener {
         cpass.setBounds(180, 275, 193, 28);
         frame.add(cpass);
 
-        // Register button
+        
         registerButton = new JButton("Register");
         registerButton.setBounds(130, 330, 100, 25);
-        registerButton.setForeground(Color.BLACK);
-        registerButton.setBackground(new Color(0, 128, 0)); // Dark green
+        registerButton.setForeground(Color.WHITE);
+        registerButton.setBackground(new Color(0, 153, 153)); 
         registerButton.addActionListener(this);
         frame.add(registerButton);
 
-        // Exit button
+        
         exitButton = new JButton("Exit");
         exitButton.setBounds(240, 330, 80, 25);
-        exitButton.setForeground(Color.BLACK);
-        exitButton.setBackground(Color.RED);
+        exitButton.setForeground(Color.WHITE);
+        exitButton.setBackground(new Color(64,64,64));
         exitButton.addActionListener(e -> System.exit(0));
         frame.add(exitButton);
 
-        // Load and resize the image
+        
         try {
             BufferedImage originalImage = ImageIO.read(getClass().getResource("/register.png"));
             int scaledWidth = 200;
@@ -110,8 +109,8 @@ public class Register implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (areFieldsValid()) {
             JOptionPane.showMessageDialog(null, "Registration Successful");
-            frame.dispose(); // Close the registration window
-            new Login(); // Open the login window
+            frame.dispose();
+            new Login(); 
         }
     }
 
@@ -119,18 +118,18 @@ public class Register implements ActionListener {
         for (JTextField textField : textFields) {
             if (textField.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in all fields.");
-                return false; // If any field is empty, return false
+                return false; 
             }
         }
 
-        // Email validation
+       
         String email = textFields[3].getText().trim();
         if (!isValidEmail(email)) {
             JOptionPane.showMessageDialog(null, "Invalid Email Address");
             return false;
         }
 
-        // Password validation
+       
         char[] password = pass.getPassword();
         char[] confirmPassword = cpass.getPassword();
         if (!isPasswordValid(password, confirmPassword)) {
@@ -138,7 +137,7 @@ public class Register implements ActionListener {
             return false;
         }
 
-        return true; // All fields are filled and email is valid
+        return true; 
     }
 
     private boolean isValidEmail(String email) {
