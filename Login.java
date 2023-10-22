@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.*;
 import javax.imageio.ImageIO;
 
 class BackgroundPanel extends JPanel {
@@ -29,7 +32,7 @@ class BackgroundPanel extends JPanel {
 class Login implements ActionListener {
     private static JFrame frame;
     private static JLabel label;
-    private static JTextField username;
+    private static JTextField user;
     private static JButton loginButton;
     private static JButton registerButton;
     private static JButton exitButton;
@@ -64,9 +67,9 @@ class Login implements ActionListener {
         label.setBounds(130, 105, 70, 20);
         frame.add(label);
 
-        username = new JTextField();
-        username.setBounds(130, 140, 193, 28);
-        frame.add(username);
+        user = new JTextField();
+        user.setBounds(130, 140, 193, 28);
+        frame.add(user);
 
         JLabel passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(130, 190, 70, 20);
@@ -103,17 +106,49 @@ class Login implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginButton) {
-            String Username = username.getText();
-            String Password1 = new String(password.getPassword());
-
-            if (Username.equals("HD1.0") && Password1.equals("123")) {
-                JOptionPane.showMessageDialog(null, "Login Successful");
-                frame.dispose();
-                new BookStore();
-            } else {
-                JOptionPane.showMessageDialog(null, "Username or Password mismatch");
+            String url="jdbc:mysql://localhost:3306/library";
+            String mysqluser="root";
+            String mysqlpasswd="1234";
+            String pswrd=new String(password.getPassword());
+            String username=user.getText();
+            String query=("Select password from login where username='"+username+"';");
+            try{
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con=DriverManager.getConnection(url,mysqluser, mysqlpasswd);
+                PreparedStatement ps=con.prepareStatement(query);
+                ResultSet rs=ps.executeQuery();
+                if(rs.next()){
+                    String realpasswrd=rs.getString("password");
+                    if(realpasswrd.equals(pswrd)){
+                        JOptionPane.showMessageDialog(null, "Login Successful");
+                        frame.dispose();
+                        new BookStore();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Username or Password mismatch");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong Username");
+                }
             }
-        } else if (e.getSource() == registerButton) {
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+            
+            
+            // String Username = username.getText();
+            // String Password1 = new String(password.getPassword());
+
+            // if (Username.equals("HD1.0") && Password1.equals("123")) {
+            //     JOptionPane.showMessageDialog(null, "Login Successful");
+            //     frame.dispose();
+            //     new BookStore();
+            // } else {
+            //     JOptionPane.showMessageDialog(null, "Username or Password mismatch");
+            // }
+        } 
+        else if (e.getSource() == registerButton) {
             frame.dispose();
             new Register();
         }
