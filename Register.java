@@ -3,6 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 import javax.imageio.ImageIO;
 
 public class Register implements ActionListener {
@@ -108,9 +112,26 @@ public class Register implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (areFieldsValid()) {
-            JOptionPane.showMessageDialog(null, "Registration Successful");
-            frame.dispose();
-            new Login(); 
+            String url = "jdbc:mysql://localhost:3306/library";
+            String mysqluser = "root";
+            String mysqlpasswd = "1234";
+
+            // Database insertion code
+            String insertQuery = "INSERT INTO login (username, password) VALUES (?, ?)";
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection(url, mysqluser, mysqlpasswd);
+                PreparedStatement ps = con.prepareStatement(insertQuery);
+                ps.setString(1, textFields[1].getText()); // Username
+                ps.setString(2, new String(pass.getPassword())); // Password
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Registration Successful");
+                con.close();
+                frame.dispose();
+                new Login();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
         }
     }
 

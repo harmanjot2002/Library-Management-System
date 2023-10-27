@@ -104,49 +104,39 @@ class Login implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginButton) {
-            String url="jdbc:mysql://localhost:3306/library";
-            String mysqluser="root";
-            String mysqlpasswd="1234";
-            String pswrd=new String(password.getPassword());
-            String username=user.getText();
-            String query=("Select password from login where username='"+username+"';");
-            try{
+            String url = "jdbc:mysql://localhost:3306/library";
+            String mysqluser = "root";
+            String mysqlpasswd = "1234";
+            String pswrd = new String(password.getPassword());
+            String username = user.getText();
+            String query = "SELECT password FROM login WHERE username = ?";
+            try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con=DriverManager.getConnection(url,mysqluser, mysqlpasswd);
-                PreparedStatement ps=con.prepareStatement(query);
-                ResultSet rs=ps.executeQuery();
-                if(rs.next()){
-                    String realpasswrd=rs.getString("password");
-                    if(realpasswrd.equals(pswrd)){
+                Connection con = DriverManager.getConnection(url, mysqluser, mysqlpasswd);
+                PreparedStatement ps = con.prepareStatement(query);
+                ps.setString(1, username);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    String realpasswrd = rs.getString("password");
+                    if (realpasswrd.equals(pswrd)) {
                         JOptionPane.showMessageDialog(null, "Login Successful");
                         frame.dispose();
                         new BookStore();
-                    }
-                    else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Username or Password mismatch");
                     }
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Wrong Username");
                 }
-            }
-            catch(Exception ex){
+                con.close();
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
+        }
+       
             
             
-            // String Username = username.getText();
-            // String Password1 = new String(password.getPassword());
-
-            // if (Username.equals("HD1.0") && Password1.equals("123")) {
-            //     JOptionPane.showMessageDialog(null, "Login Successful");
-            //     frame.dispose();
-            //     new BookStore();
-            // } else {
-            //     JOptionPane.showMessageDialog(null, "Username or Password mismatch");
-            // }
-        } 
-        else if (e.getSource() == registerButton) {
+        if (e.getSource() == registerButton) {
             frame.dispose();
             new Register();
         }
