@@ -21,3 +21,4 @@ mysql> desc login;
 | password | varchar(50) | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
 2 rows in set (0.00 sec)
+ 
