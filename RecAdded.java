@@ -6,16 +6,13 @@ import java.awt.event.ActionListener;
 public class RecAdded {
     public RecAdded() {
         JFrame f = new JFrame("Record Added");
-        f.setSize(350, 180);
         f.setLayout(null);
 
         f.setContentPane(new JPanel(null));
         f.setUndecorated(true);
         f.getRootPane().setBorder(BorderFactory.createLineBorder(new Color(102, 0, 51), 3));
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        f.setLocation((int) (screenSize.getWidth() - f.getWidth()) / 2, (int) (screenSize.getHeight() - f.getHeight()) / 2);
-
+       
         JPanel panel=new JPanel();
         panel.setBounds(0, -25,350,200) ;
         f.add(panel);
@@ -55,7 +52,11 @@ public class RecAdded {
         
         });
         f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setSize(350, 180); 
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        f.setLocation((int) (screenSize.getWidth() - f.getWidth()) / 2, (int) (screenSize.getHeight() - f.getHeight()) / 2);
+
+        //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {
